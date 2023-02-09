@@ -1,0 +1,25 @@
+*{
+    font-family: sans-serif;
+}
+
+.div {
+    background-color: rgb(176, 220, 221);
+    margin: 50px;
+    width: 50%;
+}
+
+h2 {
+    text-align: center;
+    padding: 10px;
+}
+form {
+    margin: 20px;
+    padding: 10PX;
+    text-align: center;
+}
+input [type=text]{
+    border-radius: 1px;
+}
+button{
+
+}
