@@ -2,8 +2,11 @@
     font-family: sans-serif;
 }
 
+body{
+    background-color: black;
+}
+
 .div {
-    background-color: rgb(176, 220, 221);
     margin: 50px;
     width: 50%;
 }
@@ -15,11 +18,7 @@ h2 {
 form {
     margin: 20px;
     padding: 10PX;
-    text-align: center;
 }
-input [type=text]{
+input{
     border-radius: 1px;
-}
-button{
-
 }
