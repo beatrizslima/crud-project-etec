@@ -17,12 +17,12 @@ include_once 'conexao_bd.php';
   <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
-    <title>Cadastro Funcionários</title>
+    <title>Lista de funcionárioss</title>
 </head>
 <body>
 
     <div class="container p-3 my-3 border">
-        <h2>Cadastrar funcionário</h2>
+        <h2>Lista de funcionários</h2>
 
             <table class="table table-hover">
                 <thead>
@@ -58,8 +58,8 @@ while($dados = mysqli_fetch_array($resultado)){
 
             </table>
 
-            <button class="btn btn-outline-warning">Cadastrar novo funcionário</button>
-            <button class="btn btn-outline-warning">Lista</button>
+            <a href= "index.php "class="btn btn-outline-warning">Voltar</a>
+            <a class="btn btn-outline-warning">Cadastrar novo funcionário</a>
         </div>
 </body>
 </html>

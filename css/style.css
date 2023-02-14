@@ -2,23 +2,20 @@
     font-family: sans-serif;
 }
 
-
-.div {
-    margin: 50px;
-    width: 50%;
+body{
+    background-color: #8347A1 !important;
+}
+div{
+    background-color: white !important;
 }
 
 h2 {
     text-align: center;
     padding: 10px;
 }
-form {
-    margin: 20px;
-    padding: 10px;
-}
 input{
     border-radius: 1px;
 }
-.image-container{
-    align-items: center;
+.text-span{
+    text-align: center;
 }

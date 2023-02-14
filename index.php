@@ -22,12 +22,13 @@
         <div class= "image-container">
         <img src="assets/people.png" alt="Pessoas" width="800px" class="mx-auto d-block">
         </div>
-    <p>Selecione a opção que deseja:</p>
-
-            <button class="btn btn-outline-warning">Novo funcionário</button>
-            <button class="btn btn-outline-warning">Lista de funcionários</button>
-
-    </div> 
+    
+    <div class= "text-span">    
+        <span>Selecione a opção que deseja:</span>
+            <a class="btn btn-outline-warning">Novo funcionário</a>
+            <a href= "lista.php" class="btn btn-outline-warning">Lista de funcionários</a>
+    </div>
+</div> 
 
 </body>
 </html>
