@@ -1,3 +1,20 @@
+<?php 
+	include_once 'conexao_bd.php';
+
+	if (isset($_GET['id'])) {
+
+		$id = mysqli_escape_string($connection, $_GET['id']);
+
+		$sql = "SELECT * FROM tbClientes WHERE codCli = '$id'";
+
+		$resultado = mysqli_query($connection,$sql);
+
+		$dados = mysqli_fetch_array($resultado);
+
+	}
+
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -15,23 +32,24 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
-    <title>Cadastro Funcionários</title>
+    <title>Alterar Cadastro</title>
 </head>
 
 <body>
 
     <div class="container p-3 my-3 border">
-        <h2>Cadastrar funcionário</h2>
-        <form action="criar_func.php" method="POST">
+        <h2>Alterar Cadastro</h2>
+        <form action="alterar.php" method="POST">
             Nome: <input type="text" name="nome" id="nome" class="form-control"> <br>
             Sobrenome: <input type="text" name="sobrenome" id="sobrenome" class="form-control"> <br>
             E-mail: <input type="text" name="email" id="email" class="form-control"> <br>
             Idade: <input type="text" name="idade" id="idade" class="form-control"> <br>
 
-            <a href="index.php " class="btn btn-outline-warning">Voltar</a>
-            <button type="submit" class="btn btn-outline-warning" name="btn-cadastrar">Cadastrar</button>
+            <a href="lista.php " class="btn btn-outline-warning">Voltar</a>
+            <button type="submit" class="btn btn-outline-warning" name="btn-alterar">Alterar</button>
         </form>
 
     </div>
 </body>
+
 </html>

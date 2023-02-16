@@ -10,13 +10,15 @@ include_once 'conexao_bd.php';
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="css/style.css">
 
     <!--Bootstrap-->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
     <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.1/dist/jquery.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
+
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="path/to/font-awesome/css/font-awesome.min.css">
 
     <title>Lista de funcionárioss</title>
 </head>
@@ -45,7 +47,7 @@ include_once 'conexao_bd.php';
 
 
                 while ($dados = mysqli_fetch_array($resultado)) {
-                    ?>
+                ?>
 
                     <tr>
                         <td>
@@ -61,14 +63,33 @@ include_once 'conexao_bd.php';
                             <?php echo $dados['idadeCli']; ?>
                         </td>
 
-                    <?php } ?>
+                        <td><a href="alterar_page.php?id=<?php echo $dados['codCli']; ?>" class="btn btn-outline-warning">Editar</a></td>
+
+                        <td><a href="#modal" class="btn btn-outline-warning">Excluir</a></td>
+
+                    </tr>
+
+                <?php } ?>
 
             </tbody>
         </table>
 
+        <!-- modal-->
+        <div id="modal" class="wrap">
+            <div class="modal js-modal">
+                <h1 id="tituloModal">Tem certeza de que quer excluir?</h1>
+                <p id="mensagemModal">O registro será apagado</p>
+                <button class="js-close">Dismiss</button>
+                <form action="php_action/excluir_cliente.php" method="POST">
+                    <input type="hidden" name="codCli" value="<?php echo $dados['codCli']; ?>">
+                    <button type="submit" name="btn-excluir" class="btn red">Excluir</button>
+                    <a href="#">Cancelar</a>
+            </div>
+        </div>
+
         <a href="index.php " class="btn btn-outline-warning">Voltar</a>
-        <a class="btn btn-outline-warning">Cadastrar novo funcionário</a>
+        <a href="cadastrar.php" class="btn btn-outline-warning">Cadastrar novo funcionário</a>
     </div>
 </body>
-
+<script src="excluir.js"></script>
 </html>
